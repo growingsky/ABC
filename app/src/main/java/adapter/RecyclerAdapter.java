@@ -19,7 +19,7 @@ import de.freshmaninandroid.app_programmierung.newproject.object.User;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PersonViewHolder> {
 
-    Context context;
+   
     ArrayList<User> users;
 
 
@@ -32,7 +32,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Person
         LayoutInflater ltInflater = LayoutInflater.from(parent.getContext()); // Implement LI
         View v = ltInflater.inflate(R.layout.recycler_item, parent, false); // Implement method inflater
         PersonViewHolder pvh = new PersonViewHolder(v); // Create an object of PVH and give him v as parameter.
-        context = parent.getContext();
+      
 
         return pvh; // return personal view holder
     }
@@ -45,7 +45,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Person
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
                 if (isLongClick) {
-                    Toast.makeText(context, "Long Click", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "Long Click", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(context, "Short Click", Toast.LENGTH_SHORT).show();
                 }
